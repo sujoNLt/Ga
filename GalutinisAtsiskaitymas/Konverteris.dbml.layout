@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Konverteris">
+  <DataContextMoniker Name="/KonverterisDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9ce376aa-0fe4-4ee7-8235-b6824d626f82" absoluteBounds="2.875, 2.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/KonverterisDataContext/UserInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="790be31d-7fb6-48a8-947c-a9b1793bc7a1" absoluteBounds="2.89, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65740e90-795d-4122-ad6c-c278ffb90060" absoluteBounds="0.5, 3, 2, 1.3862939453125">
+      <DataClassMoniker Name="/KonverterisDataContext/AtmintiesScore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74edba2e-9a92-4614-9fe6-9f39de375a67" absoluteBounds="0.515, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 3.69314697265625); (2.5 : 3.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KonverterisDataContext/UserInfo/UserInfo_AtmintiesScore" />
+      <nodes>
+        <classShapeMoniker Id="9ce376aa-0fe4-4ee7-8235-b6824d626f82" />
+        <classShapeMoniker Id="65740e90-795d-4122-ad6c-c278ffb90060" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c9bb47cd-35ef-4048-8f1b-32a33ce70571" absoluteBounds="5.25, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KonverterisDataContext/PlatformerScore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93f15706-56fa-438a-8703-6c189d0680a6" absoluteBounds="5.265, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 3.66429768880208); (5.25 : 3.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KonverterisDataContext/UserInfo/UserInfo_PlatformerScore" />
+      <nodes>
+        <classShapeMoniker Id="9ce376aa-0fe4-4ee7-8235-b6824d626f82" />
+        <classShapeMoniker Id="c9bb47cd-35ef-4048-8f1b-32a33ce70571" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

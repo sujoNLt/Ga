@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UserDataBase" Class="KonverterisDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\UserDataBase.mdf;Integrated Security=True" SettingsObjectName="GalutinisAtsiskaitymas.Properties.Settings" SettingsPropertyName="UserDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserInfo" Member="UserInfos">
+    <Type Name="UserInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Hash" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Salt" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="UserInfo_AtmintiesScore" Member="AtmintiesScores" ThisKey="Id" OtherKey="VartotojoID" Type="AtmintiesScore" />
+      <Association Name="UserInfo_PlatformerScore" Member="PlatformerScores" ThisKey="Id" OtherKey="VartotojoID" Type="PlatformerScore" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AtmintiesScore" Member="AtmintiesScores">
+    <Type Name="AtmintiesScore">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VartotojoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laikas" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="UserInfo_AtmintiesScore" Member="UserInfo" ThisKey="VartotojoID" OtherKey="Id" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlatformerScore" Member="PlatformerScores">
+    <Type Name="PlatformerScore">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VartotojoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Laikas" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Gyvybes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserInfo_PlatformerScore" Member="UserInfo" ThisKey="VartotojoID" OtherKey="Id" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
